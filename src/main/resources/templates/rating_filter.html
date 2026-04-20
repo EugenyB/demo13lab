@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Студенти за рейтингом</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+<nav>
+    <a th:href="@{/}">Home</a>
+    <a th:href="@{/add}">Додавання</a>
+    <a th:href="@{/rating}">Рейтинг</a>
+    <a th:href="@{/about}">Про програму</a>
+</nav>
+<div class="content">
+    <h1>Студенти за рейтингом</h1>
+    <form method="post" th:action="@{/rating}">
+        <div class="form-group">
+            <label for="rating">Рейтинг</label>
+            <input type="number" id="rating" name="rating" required>
+        </div>
+        <button type="submit" class="btn-submit">Фільтрувати</button>
+        <a class="btn-cancel" th:href="@{/rating}">Скасувати</a>
+    </form>
+    <table>
+        <thead>
+        <tr>
+            <th>№</th>
+            <th>Ім'я</th>
+            <th>Вік</th>
+            <th>Рейтинг</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="student : ${students}">
+            <td th:text="${student.id}"></td>
+            <td th:text="${student.name}"></td>
+            <td th:text="${student.age}"></td>
+            <td th:text="${student.rating}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

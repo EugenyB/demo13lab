@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №13</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+    <nav>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/add}">Додавання</a>
+        <a th:href="@{/rating}">Рейтинг</a>
+        <a th:href="@{/about}">Про програму</a>
+    </nav>
+    <div class="content">
+        <h1>Students demo for LR 13</h1>
+        <p>This is a simple demo application for the students of the LR 13.</p>
+        <table>
+            <thead>
+            <tr>
+                <th>№</th>
+                <th>Ім'я</th>
+                <th>Вік</th>
+                <th>Рейтинг</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="student : ${students}">
+                <td th:text="${student.id}"></td>
+                <td th:text="${student.name}"></td>
+                <td th:text="${student.age}"></td>
+                <td th:text="${student.rating}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
