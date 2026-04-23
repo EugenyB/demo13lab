@@ -44,4 +44,10 @@ public class MainController {
         model.addAttribute("students", studentService.getStudentsByRating(rating));
         return "rating_filter";
     }
+
+    @GetMapping("/delete")
+    public String delete(@RequestParam Integer id) {
+        studentService.deleteStudentById(id);
+        return "redirect:/";
+    }
 }

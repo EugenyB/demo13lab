@@ -22,6 +22,7 @@
                 <th>Ім'я</th>
                 <th>Вік</th>
                 <th>Рейтинг</th>
+                <th>Видалення</th>
             </tr>
             </thead>
             <tbody>
@@ -30,6 +31,7 @@
                 <td th:text="${student.name}"></td>
                 <td th:text="${student.age}"></td>
                 <td th:text="${student.rating}"></td>
+                <td><a th:href="@{/delete(id=${student.id})}">Видалити</a></td>
             </tr>
             </tbody>
         </table>

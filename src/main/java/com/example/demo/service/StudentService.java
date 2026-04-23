@@ -24,4 +24,8 @@ public class StudentService {
     public List<Student> getStudentsByRating(double minRating) {
         return studentRepository.findByRatingGreaterThanEqualOrderByRatingDesc(minRating);
     }
+
+    public void deleteStudentById(Integer id) {
+        studentRepository.deleteById(id);
+    }
 }
